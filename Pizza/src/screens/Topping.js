@@ -6,18 +6,11 @@ import {
   Image,
   TouchableOpacity,
   Button,
-  Pressable,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 // import Pizza1 from '../assets/img/Pizza_1'
 
-
-const Home = ({navigation}) => {
-
-  function screenHandler (){
-    navigation.navigate('Crust')
-  }
-
+const Topping = () => {
   return (
     <>
       <View>
@@ -31,7 +24,7 @@ const Home = ({navigation}) => {
             <Text style={styles.subHeading}>SIZE, CRUST, TOPPINGS</Text>
           </View>
           <View style={styles.mainBox2}>
-            <Text style={styles.mainPricing}>$10</Text>
+            <Text style={styles.mainPricing}>$14</Text>
           </View>
         </LinearGradient>
       </View>
@@ -60,7 +53,7 @@ const Home = ({navigation}) => {
           <View style={{alignItems: 'center', justifyContent: 'center'}}>
             <Image
               style={styles.MainPizza}
-              source={require('../assets/img/Pizza_1.png')}
+              source={require('../assets/img/PizzaCrust.png')}
             />
           </View>
         </View>
@@ -75,10 +68,10 @@ const Home = ({navigation}) => {
       </View>
 
       <View style={styles.pizzaSize}>
-        <Text style={styles.pizzaSizeHeading}>Choose your Size</Text>
+        <Text style={styles.pizzaSizeHeading}>Choose your Crust</Text>
         <View style={styles.sizeChoiceBTN}>
           <TouchableOpacity style={styles.sizeChoiceSML}>
-            <Text>Small</Text>
+            <Text>Thin</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.sizeChoiceSML, styles.sizeChoiceBTNDesign]}>
@@ -87,32 +80,25 @@ const Home = ({navigation}) => {
               style={[styles.sizeChoiceBTNDesign, styles.mainBanner]}
               start={{x: 0, y: 0.9}}
               end={{x: 1, y: 0.2}}>
-              <Text style={{color: 'white'}}>Medium</Text>
+              <Text style={{color: 'white'}}>Thick</Text>
             </LinearGradient>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.sizeChoiceSML]}>
-            <Text>Large</Text>
-          </TouchableOpacity>
+          
         </View>
       </View>
 
       <View>
-        <TouchableOpacity 
-         onPress={() => screenHandler()}
-        style={{marginTop: 20}}
-        >
-          
+        <TouchableOpacity style={{marginTop: 20,}}>
           <LinearGradient
           colors={['#F5313F', '#FFA360']}
           style={[styles.nextBTN]}
           start={{x: 0, y: 0.9}}
           end={{x: 1, y: 0.2}}
           >
-          <Text  style={{color: 'white', fontSize: 20,}}>
+          <Text style={{color: 'white', fontSize: 20,}}>
             Next
           </Text>
           </LinearGradient>
-          
         </TouchableOpacity>
       </View>
     </>
@@ -215,7 +201,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   sizeChoiceSML: {
-    flex: 0.33,
+    flex: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 3,
@@ -232,4 +218,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home;
+export default Topping;

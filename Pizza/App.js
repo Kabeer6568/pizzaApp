@@ -9,7 +9,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Tabs from './src/components/tabNavigation'
 import Home from './src/screens/Home'
-import About from './src/screens/About'
+import Crust from './src/screens/Crust'
+import Topping from './src/screens/Topping'
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,8 +30,24 @@ function App() {
     <>
     <NavigationContainer>
       <Drawer.Navigator>
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="About" component={About} />
+      <Drawer.Screen options={{
+            title: "Uncle John Pizza",
+
+            // Center the header title on Android
+            headerTitleAlign: "center",
+          }} name="Home" component={Home} />
+      <Drawer.Screen  name="Crust" options={{
+            title: "Crust",
+
+            // Center the header title on Android
+            headerTitleAlign: "center",
+          }} component={Crust} />
+      <Drawer.Screen  name="Topping" options={{
+            title: "Topping",
+
+            // Center the header title on Android
+            headerTitleAlign: "center",
+          }} component={Topping} />
     </Drawer.Navigator>
     </NavigationContainer>
 
