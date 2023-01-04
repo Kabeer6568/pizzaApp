@@ -6,7 +6,6 @@ import {
   Image,
   TouchableOpacity,
   Button,
-  Pressable,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 // import Pizza1 from '../assets/img/Pizza_1'
@@ -75,7 +74,11 @@ const Home = ({navigation}) => {
       </View>
 
       <View style={styles.pizzaSize}>
+
         <Text style={styles.pizzaSizeHeading}>Choose your Size</Text>
+
+        <Text style={styles.pizzaSizeHeading}>Choose your size</Text>
+
         <View style={styles.sizeChoiceBTN}>
           <TouchableOpacity style={styles.sizeChoiceSML}>
             <Text>Small</Text>
@@ -97,11 +100,14 @@ const Home = ({navigation}) => {
       </View>
 
       <View>
+
         <TouchableOpacity 
          onPress={() => screenHandler()}
         style={{marginTop: 20}}
         >
           
+        
+
           <LinearGradient
           colors={['#F5313F', '#FFA360']}
           style={[styles.nextBTN]}
@@ -113,7 +119,7 @@ const Home = ({navigation}) => {
           </Text>
           </LinearGradient>
           
-        </TouchableOpacity>
+          </TouchableOpacity>
       </View>
     </>
   );
