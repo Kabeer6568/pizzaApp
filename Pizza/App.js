@@ -11,6 +11,8 @@ import Tabs from './src/components/tabNavigation'
 import Home from './src/screens/Home'
 import Crust from './src/screens/Crust'
 import Topping from './src/screens/Topping'
+import BTNCarousal from './src/screens/BTNCarousal'
+import ButtonTest from './src/screens/ButtonTest'
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -48,7 +50,15 @@ function App() {
             // Center the header title on Android
             headerTitleAlign: "center",
           }} component={Topping} />
+      <Drawer.Screen  name="BTNCarousal" options={{
+            title: "BTNCarousal",
+
+            // Center the header title on Android
+            headerTitleAlign: "center",
+          }} component={BTNCarousal} />
+      
     </Drawer.Navigator>
+      
     </NavigationContainer>
 
     

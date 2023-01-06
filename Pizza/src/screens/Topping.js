@@ -6,9 +6,11 @@ import {
   Image,
   TouchableOpacity,
   Button,
+  FlatList,
+  TouchableHighlight,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-// import Pizza1 from '../assets/img/Pizza_1'
+import BTNCarousal from './BTNCarousal';
 
 const Topping = () => {
   return (
@@ -50,8 +52,8 @@ const Topping = () => {
             paddingTop: 20,
             paddingBottom: 20,
           }}>
-          <View style={{alignItems: 'center', justifyContent: 'center'}}>
-            <Image
+          <View style={{alignItems: 'center', justifyContent: 'center',}}>
+          <Image
               style={styles.MainPizza}
               source={require('../assets/img/PizzaCrust.png')}
             />
@@ -59,18 +61,12 @@ const Topping = () => {
         </View>
       </View>
 
-      <View style={styles.pizzaSizesBTNContainer}>
-        <View style={{flex: 0.3}}></View>
-        <TouchableOpacity style={styles.pizzaSizesBTN}>
-          <Text>12*</Text>
-        </TouchableOpacity>
-        <View style={{flex: 0.3}}></View>
-      </View>
+      
 
       <View style={styles.pizzaSize}>
-        <Text style={styles.pizzaSizeHeading}>Choose your Crust</Text>
-        <View style={styles.sizeChoiceBTN}>
-          <TouchableOpacity style={styles.sizeChoiceSML}>
+        <Text style={styles.pizzaSizeHeading}>Choose upto 7 Toppings</Text>
+        {/* <View style={styles.sizeChoiceBTN}> */}
+          {/* <TouchableOpacity style={styles.sizeChoiceSML}>
             <Text>Thin</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -82,10 +78,14 @@ const Topping = () => {
               end={{x: 1, y: 0.2}}>
               <Text style={{color: 'white'}}>Thick</Text>
             </LinearGradient>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+
           
-        </View>
+<BTNCarousal/>
+        {/* </View> */}
       </View>
+
+      <BTNCarousal></BTNCarousal>
 
       <View>
         <TouchableOpacity style={{marginTop: 20,}}>
@@ -178,18 +178,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#dddddd',
   },
   pizzaSize: {
-    backgroundColor: '#fff',
-    height: 120,
+    backgroundColor: '#F9F9FB',
+    height: 170,
     marginHorizontal: 20,
+    marginVertical: 9,
     borderRadius: 30,
 
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 0,
     },
-    shadowOpacity: 3.84,
-    shadowRadius: 0.84,
     elevation: 1,
   },
   pizzaSizeHeading: {
