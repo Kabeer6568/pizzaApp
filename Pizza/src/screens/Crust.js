@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   Button,
+  ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 // import Pizza1 from '../assets/img/Pizza_1'
@@ -17,7 +18,7 @@ const Crust = ({navigation}) => {
   }
 
   return (
-    <>
+    <ScrollView>
       <View>
         <LinearGradient
           colors={['#F5313F', '#FFA360']}
@@ -106,7 +107,7 @@ const Crust = ({navigation}) => {
           </LinearGradient>
         </TouchableOpacity>
       </View>
-    </>
+    </ScrollView>
   );
 };
 

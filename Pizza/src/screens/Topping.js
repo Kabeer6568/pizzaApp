@@ -8,13 +8,14 @@ import {
   Button,
   FlatList,
   TouchableHighlight,
+  ScrollView,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import BTNCarousal from './BTNCarousal';
 
 const Topping = () => {
   return (
-    <>
+    <ScrollView>
       <View>
         <LinearGradient
           colors={['#F5313F', '#FFA360']}
@@ -85,7 +86,7 @@ const Topping = () => {
         {/* </View> */}
       </View>
 
-      <BTNCarousal></BTNCarousal>
+      
 
       <View>
         <TouchableOpacity style={{marginTop: 20,}}>
@@ -101,7 +102,7 @@ const Topping = () => {
           </LinearGradient>
         </TouchableOpacity>
       </View>
-    </>
+    </ScrollView>
   );
 };
 

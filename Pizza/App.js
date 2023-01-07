@@ -2,68 +2,49 @@
 // In App.js in a new project
 // import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text,StyleSheet } from 'react-native';
+
+import DrawerHeader from './src/Components/DrawerHeader'
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Tabs from './src/components/tabNavigation'
-import Home from './src/screens/Home'
-import Crust from './src/screens/Crust'
-import Topping from './src/screens/Topping'
-import BTNCarousal from './src/screens/BTNCarousal'
-import ButtonTest from './src/screens/ButtonTest'
+import { createStackNavigator } from '@react-navigation/stack';
 
+
+import Home from './src/Screens/Home'
+import Crust from './src/Screens/Crust'
+import Topping from './src/Screens/Topping'
+import BTNCarousal from './src/Screens/BTNCarousal'
+import ConfirmOrder from './src/Screens/ConfirmOrder'
+import ButtonTest from './src/Screens/ButtonTest'
+// import DrawerNavAddition from './src/Components/DrawerNavAddition'
+
+
+import DrawerHeaderMain from './src/Components/DrawerHeaderMain'
 const Drawer = createDrawerNavigator();
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-// function HomeScreen() {
-//   return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//       <Text>Home Screen</Text>
-//     </View>
-//   );
-// }
 
-const Stack = createNativeStackNavigator();
+function Root() {
+  return (
+    <Drawer.Navigator >
+      <Drawer.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+      <Drawer.Screen name="Crust" component={Crust} options={{ headerShown: false }}/>
+      <Stack.Screen name="Topping" component={Topping}options={{ headerShown: false }} />
+    </Drawer.Navigator>
+  );
+}
+
+
 
 function App() {
   return (
     <>
-    <NavigationContainer>
-      <Drawer.Navigator>
-      <Drawer.Screen options={{
-            title: "Uncle John Pizza",
-
-            // Center the header title on Android
-            headerTitleAlign: "center",
-          }} name="Home" component={Home} />
-      <Drawer.Screen  name="Crust" options={{
-            title: "Crust",
-
-            // Center the header title on Android
-            headerTitleAlign: "center",
-          }} component={Crust} />
-      <Drawer.Screen  name="Topping" options={{
-            title: "Topping",
-
-            // Center the header title on Android
-            headerTitleAlign: "center",
-          }} component={Topping} />
-      <Drawer.Screen  name="BTNCarousal" options={{
-            title: "BTNCarousal",
-
-            // Center the header title on Android
-            headerTitleAlign: "center",
-          }} component={BTNCarousal} />
+      <DrawerHeaderMain/>
       
-    </Drawer.Navigator>
-      
-    </NavigationContainer>
-
     
+  
+          
     </>
-    );
+  );
 }
 
 export default App;
